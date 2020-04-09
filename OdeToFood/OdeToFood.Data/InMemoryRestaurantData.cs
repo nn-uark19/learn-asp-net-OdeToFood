@@ -1,19 +1,13 @@
 ﻿using OdeToFood.Core;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace OdeToFood.Data
 {
-    public interface IRestaurentData
-    {
-        IEnumerable<Restaurant> GetAll();
-    }
-    public class InMemoryRestaurentData : IRestaurentData
+    public class InMemoryRestaurantData : IRestaurantData
     {
         public List<Restaurant> restaurents;
-        public InMemoryRestaurentData()
+        public InMemoryRestaurantData()
         {
             restaurents = new List<Restaurant>
             {
