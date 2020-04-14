@@ -22,11 +22,14 @@ namespace OdeToFood.Main
             this.config = config;
             this.restaurantData = restaurantData;
         }
-        public void OnGet()
+        public void OnGet(string searchTerm)
         {
             //Message = "Hello";
             Message = config["Message"];
-            Restaurents = restaurantData.GetAll();
+            Console.WriteLine(HttpContext.Request.QueryString);
+
+            //Restaurents = restaurantData.GetAll();
+            Restaurents = restaurantData.GetRestaurantsByName(searchTerm);
         }
     }
 }
