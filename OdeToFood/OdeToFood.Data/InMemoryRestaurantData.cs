@@ -23,5 +23,13 @@ namespace OdeToFood.Data
                    select r;
 
         }
+
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name)
+        {
+            return from r in restaurents
+                   where string.IsNullOrEmpty(name) || r.Name.Contains(name)
+                   orderby r.Name
+                   select r;
+        }
     }
 }
