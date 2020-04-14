@@ -1,5 +1,9 @@
 To Run
 
-1. Clone
+Clone
 
-2.  dotnet watch -p OdeToFood/OdeToFood.Main/OdeToFood.Main.csproj run
+cd <path>\project-OdeToFood\OdeToFood
+
+dotnet watch -p OdeToFood/OdeToFood.Main/OdeToFood.Main.csproj run
+
+https://localhost:5001/Restaurents/List
