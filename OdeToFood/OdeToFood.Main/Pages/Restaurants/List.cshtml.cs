@@ -12,20 +12,24 @@ namespace OdeToFood.Main
 {
     public class ListModel : PageModel
     {
+        // private, for injection
         private readonly IConfiguration config;
         private readonly IRestaurantData restaurantData;
 
+        // use this for both input and output model
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
         public string Message { get; set; }
         public IEnumerable<Restaurant> Restaurents { get; set; }
+
+        // constructor
         public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
             this.config = config;
             this.restaurantData = restaurantData;
         }
-        public void OnGet()
+        public void OnGet(string searchTerm)
         {
             //Message = "Hello";
             Message = config["Message"];
