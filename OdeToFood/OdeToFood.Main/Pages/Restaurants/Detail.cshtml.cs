@@ -16,6 +16,8 @@ namespace OdeToFood.Main.Pages.Restaurants
 
         // public property, accessible by View
         public Restaurant Restaurant { get; set; }
+        [TempData]
+        public string Message { get; set; }
 
         public DetailModel(IRestaurantData restaurantData)
         {
